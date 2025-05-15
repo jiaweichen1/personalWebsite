@@ -6,7 +6,7 @@ html {
   }
   
   body.dark {
-    background: #121212;
+    background: #0c1a3e;
     color: #f0f0f0;
   }
   
@@ -36,14 +36,68 @@ html {
     border: 1px solid #777;
   }
   
-
-  
-  .project-card h3,
-  .project-card p,
-  .project-card a,
-  .project-card strong {
-    color: #222 !important;
+/* Toggle Switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
   }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* Slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+  }
+  
+  .slider::before {
+    position: absolute;
+    content: "🌙";
+    height: 22px;
+    width: 22px;
+    left: 4px;
+    bottom: 2px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.4s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+  }
+  
+  /* When checked */
+  input:checked + .slider {
+    background-color: #ffd700;
+  }
+  
+  input:checked + .slider::before {
+    transform: translateX(24px);
+  }
+  
+  
+  body.dark .project-card {
+    background-color: #1d2a4d; /* navy-ish card background */
+    color: #f0f0f0;
+    border: 1px solid #555;
+}
+
+body.dark .project-card a {
+    background-color: #2d3b61;
+    color: #ffd700;
+    border-color: #ffd700;
+}
+
   
   .project-card a {
     display: inline-block;
